@@ -1,0 +1,97 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f5f5f5;
+}
+
+.product-wrapper {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 500px;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.input-container input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.add-button {
+  padding: 10px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.add-button:hover {
+  background: #0056b3;
+}
+
+.product-list {
+  margin-top: 20px;
+  max-height: 300px;
+  overflow-y: auto;
+  border-top: 1px solid #ccc;
+  padding-top: 10px;
+}
+
+.product-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  gap: 15px;
+}
+
+.product-card:last-child {
+  border-bottom: none;
+}
+
+.product-name {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.product-price,
+.product-stock,
+.product-available {
+  font-size: 1rem;
+  margin: 0 10px;
+}
+
+.delete-button {
+  background: none;
+  border: none;
+  color: red;
+  cursor: pointer;
+}
+
+.edit-button {
+  background: none;
+  border: none;
+  color: rgb(66, 149, 116);
+  cursor: pointer;
+}

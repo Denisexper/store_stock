@@ -37,7 +37,7 @@ class productControllers {
     async obtenerProducto (req, res) {
         try {
             const { id } = req.params;
-            const product = await Products.findByIdJ({id});
+            const product = await Products.findByIdJ(id);
             res.status(200).send({
                 message: "producto obtenido",
                 product
@@ -71,7 +71,7 @@ class productControllers {
     async eliminarProduct (req, res) {
         try {
             const { id } = req.params;
-            const product = await Products.findByIdAndDelete({id});
+            const product = await Products.findByIdAndDelete(id);
             res.status(200).send({
                 message: "producto eliminado"
             })

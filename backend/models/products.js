@@ -8,8 +8,7 @@ const productsShema = new mongoose.Schema({
         type: String
     },
     stock: {
-        type: Boolean,
-        default: true,
+        type: Number
     }
 })
 

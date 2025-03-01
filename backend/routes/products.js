@@ -7,8 +7,8 @@ const app = Router();
 
 app.post("/crear-producto", ProductsControllers.createProduct);
 app.get("/obtener-productos", ProductsControllers.obtenerProducts);
-app.get("/obtener-product", ProductsControllers.obtenerProducto);
-app.put("/editar-producto", ProductsControllers.editarProducto);
-app.delete("/eliminar-producto", ProductsControllers.eliminarProduct);
+app.get("/obtener-product/:id", ProductsControllers.obtenerProducto);
+app.put("/editar-producto/:id", ProductsControllers.editarProducto);
+app.delete("/eliminar-producto/:id", ProductsControllers.eliminarProduct);
 
 export default app;

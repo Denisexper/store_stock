@@ -7,6 +7,7 @@ function CreateProduct() {
     nombre: "",
     precio: "",
     stock: "",
+    disponible: false,
   });
 
   const handleChange = (e) => {
@@ -18,9 +19,10 @@ function CreateProduct() {
   };
 
   const handleSubmit = async (e) => {
+    console.log(formData)
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:8080/api/crear-product", {
+      const response = await fetch("http://localhost:8080/api/crear-producto", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -28,6 +30,7 @@ function CreateProduct() {
         body: JSON.stringify(formData),
       });
       const data = await response.json();
+      console.log(data)
       if (response.ok) {
         toast.success("Producto creado");
       } else {
@@ -41,7 +44,7 @@ function CreateProduct() {
   return (
     <div className="container">
       <h1 className="title">Crear nuevo producto</h1>
-
+  
       <form onSubmit={handleSubmit} className="form">
         <input
           type="text"
@@ -51,7 +54,7 @@ function CreateProduct() {
           placeholder="Nombre del producto"
           className="input"
         />
-
+  
         <input
           type="number"
           name="precio"
@@ -60,7 +63,7 @@ function CreateProduct() {
           placeholder="Precio"
           className="input"
         />
-
+  
         <input
           type="number"
           name="stock"
@@ -69,19 +72,34 @@ function CreateProduct() {
           placeholder="Stock"
           className="input"
         />
-
+  
+        {/* Campo booleano, por ejemplo, "Disponible" */}
+        <label className="label">
+          Disponible:
+          <input
+            type="checkbox"
+            name="disponible"
+            checked={formData.disponible}
+            onChange={(e) =>
+              setFormData({ ...formData, disponible: e.target.checked })
+            }
+            className="checkbox"
+          />
+        </label>
+  
         <button type="submit" className="btn-submit">
           Crear producto
         </button>
       </form>
-
+  
       <div className="product-list">
         {/* Aquí agregarás los productos dinámicamente */}
       </div>
-
+  
       <Toaster position="bottom-center" />
     </div>
   );
+  
 }
 
 export default CreateProduct;
