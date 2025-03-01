@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import "../componnents/listarProduct.css"
 import { FaTrash, FaEdit } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 
 function ListarProducts() {
   const [productos, setProductos] = useState([]);
-
+  const navigate = useNavigate();
   useEffect(() => {
     const fetchProductos = async () => {
       try {
@@ -15,6 +16,7 @@ function ListarProducts() {
         if (data && data.products && data.products.length > 0) { 
             //para poner en el setProductos ponemos lo que nos tra el array en este caso es products
             setProductos(data.products); 
+            
           } else {
             console.error("No se encontraron productos en la respuesta.");
           }
@@ -26,6 +28,11 @@ function ListarProducts() {
 
     fetchProductos();
   }, []);
+
+  const handleChange = () => {
+
+    navigate("/")
+  }
 
   return (
     <div className="container">
@@ -54,6 +61,7 @@ function ListarProducts() {
           <p>No hay productos disponibles.</p>
         )}
       </div>
+      <button id="crearbtn" onClick={handleChange}>Crear Producto</button>
     </div>
   );
 }

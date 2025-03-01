@@ -95,3 +95,16 @@
   color: rgb(66, 149, 116);
   cursor: pointer;
 }
+
+#crearbtn {
+  background-color: #4a4a4a;
+  color: white;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#crearbtn:hover {
+  background-color: #3b3b3b;
+}

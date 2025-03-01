@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Toaster, toast } from "sonner";
 import '../componnents/crearProduct.css';
+import { useNavigate } from "react-router-dom";
 
 function CreateProduct() {
   const [formData, setFormData] = useState({
@@ -9,6 +10,8 @@ function CreateProduct() {
     stock: "",
     disponible: false,
   });
+
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -40,6 +43,10 @@ function CreateProduct() {
       console.error(error);
     }
   };
+
+  const handleListar = () => {
+    navigate("/listar")
+  }
 
   return (
     <div className="container">
@@ -97,7 +104,11 @@ function CreateProduct() {
       </div>
   
       <Toaster position="bottom-center" />
+
+      <button id="listarbtn" onClick={handleListar}>listar</button>
     </div>
+
+    
   );
   
 }
