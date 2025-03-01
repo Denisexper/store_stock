@@ -13,6 +13,7 @@ function ListarProducts() {
         const data = await response.json();
         console.log(data)
         if (data && data.products && data.products.length > 0) { 
+            //para poner en el setProductos ponemos lo que nos tra el array en este caso es products
             setProductos(data.products); 
           } else {
             console.error("No se encontraron productos en la respuesta.");
