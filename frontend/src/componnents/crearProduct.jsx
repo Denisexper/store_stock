@@ -36,6 +36,8 @@ function CreateProduct() {
       console.log(data)
       if (response.ok) {
         toast.success("Producto creado");
+        //limpiar imputs
+        
       } else {
         toast.error("Error creando producto");
       }
