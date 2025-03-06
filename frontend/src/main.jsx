@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'; // Importar Rou
 import CreateProduct from './componnents/crearProduct.jsx';
 import ListarProducts from './componnents/listarProduct.jsx';
 
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
