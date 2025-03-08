@@ -1,8 +1,8 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'; // Importar Router y Rutas
-import CreateProduct from './componnents/crearProduct.jsx';
-import ListarProducts from './componnents/listarProduct.jsx';
+import CreateProduct from '@/crearProduct.jsx';
+import ListarProducts from '@/listarProduct.jsx';
 
 
 createRoot(document.getElementById('root')).render(

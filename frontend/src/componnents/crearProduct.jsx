@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Toaster, toast } from "sonner";
-import '../componnents/crearProduct.css';
+import '@/crearProduct.css';
 import { useNavigate } from "react-router-dom";
 
 function CreateProduct() {
